@@ -4,15 +4,212 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/activity_main">
+
+    <RadioGroup
+        android:id="@+id/pilihGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/pilihMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_16sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingRight="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:text="Laki-laki"
+            android:textColor="@drawable/radio_flat_text_selector"
+             />
+
+        <RadioButton
+            android:id="@+id/pilihFemale"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radio_flat_selector"
+            android:button="@android:color/transparent"
+            android:checked="true"
+            android:paddingLeft="@dimen/_16sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingRight="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:text="Perempuan"
+            android:textColor="@drawable/radio_flat_text_selector"
+        />
+    </RadioGroup>
 
     <TextView
+        android:id="@+id/label_berat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/label_bobot"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/pilihGender"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/label_Tinggi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/height"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/inputBerat" />
+
+    <TextView
+        android:id="@+id/labelUmur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/labelUmur"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/inputTinggi"/>
+
+    <Button
+        android:id="@+id/tambahBerat"
+        android:textColor="@color/black"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:text="@string/logo_plus"
+        android:onClick="tmbBerat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/inputBerat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="45sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_berat"
+        app:layout_constraintVertical_bias="0.428"/>
+
+    <Button
+        android:id="@+id/kurangBerat"
+        android:textColor="@color/black"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="152dp"
+        android:text="@string/logo_minus"
+        android:onClick="krgBerat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/tambahTinggi"
+        android:textColor="@color/black"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="288dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:text="@string/logo_plus"
+        android:onClick="tmbTinggi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/inputTinggi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/label_Tinggi"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <Button
+        android:id="@+id/kurangTinggi"
+        android:textColor="@color/black"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="288dp"
+        android:text="@string/logo_minus"
+        android:onClick="krgTinggi"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/tambahUmur"
+        android:textColor="@color/black"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="424dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:text="@string/logo_plus"
+        android:onClick="tmbUmur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/kurangUmur"
+        android:textColor="@color/black"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="424dp"
+        android:text="@string/logo_minus"
+        android:onClick="krgUmur"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/inputUmur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelUmur" />
+
+    <Button
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="HITUNG BMI"
+        app:layout_constraintTop_toBottomOf="@+id/inputUmur"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="calculateBMI"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
