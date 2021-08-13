@@ -252,9 +252,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void refreshValue(View view){
-        displayTinggi(0);
-        displayBerat(0);
-        displayUmur(0);
-        displayGoal(0);
+        tampilTinggi = 0;
+        tampilBerat = 0;
+        tampilUmur = 0;
+        tampilGoal = 0;
+        displayTinggi(tampilTinggi);
+        displayBerat(tampilBerat);
+        displayUmur(tampilUmur);
+        displayGoal(tampilGoal);
     }
 }

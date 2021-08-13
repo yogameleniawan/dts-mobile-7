@@ -15,16 +15,12 @@ import org.w3c.dom.Text;
 public class SplashScreen extends AppCompatActivity {
 
     Handler handler;
-    TextView skip;
-    boolean status;
-    int delayMillis;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         handler = new Handler();
             handler.postDelayed(()->{
-                delayMillis = 3000;
                 Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                 startActivity(intent);
                 finish();
