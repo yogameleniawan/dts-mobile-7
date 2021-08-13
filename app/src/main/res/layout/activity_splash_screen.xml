@@ -1,16 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@color/splashbg">
+    android:background="@drawable/bg">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bitmap"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_cover"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/small_txtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Ideal for the health conscious"
+        android:textSize="25sp"
+        android:textColor="#FF6f8c99"
+        app:layout_constraintBottom_toTopOf="@+id/big_txtv"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/big_txtv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="110dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Keep your body at glance."
+        android:textColor="#FFd7e8e8"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/pagination"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/big_txtv"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:text="Skip"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.711"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/big_txtv"
+        app:layout_constraintVertical_bias="0.196"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Kalkulator BMI"
-        android:textSize="30sp"
-        android:textColor="@color/white"/>
+        android:text=">"
+        android:textColor="#FF6f8c99"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toEndOf="@+id/skip"
+        app:layout_constraintTop_toBottomOf="@+id/big_txtv"
+        app:layout_constraintVertical_bias="0.196"
+        tools:ignore="MissingConstraints" />
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Aplikasi Kalkulator BMI</string>
     <string name="label_bobot">Bobot (kg)</string>
-    <string name="height">Tinggi (cm)</string>
+    <string name="height">cm</string>
     <string name="calculatorBMI">Hitung BMI</string>
     <string name="terlalu_sangat_kurus">Terlalu Sangat Kurus</string>
     <string name="sangat_kurus">Sangat Kurus</string>
